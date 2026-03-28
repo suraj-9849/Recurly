@@ -1,42 +1,30 @@
-import { Link } from "expo-router";
-import { View } from "react-native";
-import "../global.css";
+import { Inter_400Regular } from "@expo-google-fonts/inter/400Regular";
+import { useFonts } from "@expo-google-fonts/inter/useFonts";
+import { styled } from "nativewind";
+import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
+import AppText from "../../components/AppText";
+const SafeAreaView = styled(RNSafeAreaView);
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Inter_400Regular,
+  });
+
+  let fontSize = 24;
+  let paddingVertical = 6;
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View className="flex-1 items-center justify-center bg-background">
-      <Link
-        href="/signin"
-        className="bg-blue-500 px-4 py-2 rounded text-white font-semibold mb-2 w-40 text-center"
-      >
-        Go to Signin
-      </Link>
-
-      <Link
-        href="/signup"
-        className="bg-blue-500 px-4 py-2 rounded text-white font-semibold w-40 text-center"
-      >
-        Go to Signup
-      </Link>
-
-      <Link
-        href="/subscription-details/spotify"
-        className="bg-green-500 px-4 py-2 rounded text-white font-semibold mt-4 w-40 text-center"
-      >
-        Go to Spotify
-      </Link>
-
-      <Link
-        href={{
-          pathname: "/subscription-details/[id]",
-
-          params: { id: "claude" },
-        }}
-        className="bg-green-500 px-4 py-2 rounded text-white font-semibold mt-4 w-40 text-center"
-      >
-        {" "}
-        Go to Claude{" "}
-      </Link>
-    </View>
+    <SafeAreaView
+      className="flex-1 justify-center items-center bg-background"
+      style={{
+        paddingVertical,
+      }}
+    >
+      <AppText style={{ fontSize }}>Home</AppText>
+    </SafeAreaView>
   );
 }
