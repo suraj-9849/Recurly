@@ -1,4 +1,3 @@
-import "../global.css";
 import { tabs } from "@/constants/data";
 import { colors, components } from "@/constants/theme";
 import { Tabs } from "expo-router";

@@ -1,24 +1,13 @@
-import { Inter_400Regular } from "@expo-google-fonts/inter/400Regular";
-import { useFonts } from "@expo-google-fonts/inter/useFonts";
 import { useLocalSearchParams } from "expo-router";
 import { styled } from "nativewind";
+import { Text } from "react-native";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
-import AppText from "../../../components/AppText";
 const SafeAreaView = styled(RNSafeAreaView);
 
 export default function SubscriptionDetails() {
-  let [fontsLoaded] = useFonts({
-    Inter_400Regular,
-  });
-
   const { id } = useLocalSearchParams<{ id: string }>();
 
-  let fontSize = 24;
   let paddingVertical = 6;
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
   return (
     <SafeAreaView
@@ -27,7 +16,7 @@ export default function SubscriptionDetails() {
         paddingVertical,
       }}
     >
-      <AppText style={{ fontSize }}>Subscriptions Details : {id}</AppText>
+      <Text className="text-2xl font-sans-regular text-primary">Subscriptions Details : {id}</Text>
     </SafeAreaView>
   );
 }

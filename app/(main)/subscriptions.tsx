@@ -1,21 +1,10 @@
-import { Inter_400Regular } from "@expo-google-fonts/inter/400Regular";
-import { useFonts } from "@expo-google-fonts/inter/useFonts";
 import { styled } from "nativewind";
+import { Text } from "react-native";
 import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
-import AppText from "../../components/AppText";
 const SafeAreaView = styled(RNSafeAreaView);
 
 export default function Subscriptions() {
-  let [fontsLoaded] = useFonts({
-    Inter_400Regular,
-  });
-
-  let fontSize = 24;
   let paddingVertical = 6;
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
   return (
     <SafeAreaView
@@ -24,7 +13,7 @@ export default function Subscriptions() {
         paddingVertical,
       }}
     >
-      <AppText style={{ fontSize }}>Subscriptions</AppText>
+      <Text className="text-2xl font-sans-regular text-primary">Subscriptions</Text>
     </SafeAreaView>
   );
 }

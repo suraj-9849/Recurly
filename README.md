@@ -37,3 +37,7 @@ npm run reset-project
 ### expo-router:
 
 ![alt text](image.png)
+
+### expo-fonts:
+
+![alt text](image-1.png)
