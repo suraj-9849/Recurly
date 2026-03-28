@@ -6,13 +6,6 @@ export default function App() {
   return (
     <View className="flex-1 items-center justify-center bg-background">
       <Link
-        href="/onboarding"
-        className="bg-blue-500 px-4 py-2 rounded text-white font-semibold mb-2 w-40 text-center"
-      >
-        Go to Onboarding
-      </Link>
-
-      <Link
         href="/signin"
         className="bg-blue-500 px-4 py-2 rounded text-white font-semibold mb-2 w-40 text-center"
       >
@@ -27,7 +20,7 @@ export default function App() {
       </Link>
 
       <Link
-        href="/subscriptions/spotify"
+        href="/subscription-details/spotify"
         className="bg-green-500 px-4 py-2 rounded text-white font-semibold mt-4 w-40 text-center"
       >
         Go to Spotify
@@ -35,7 +28,7 @@ export default function App() {
 
       <Link
         href={{
-          pathname: "/subscriptions/[id]",
+          pathname: "/subscription-details/[id]",
 
           params: { id: "claude" },
         }}
